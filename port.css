@@ -1,0 +1,490 @@
+/* large */
+.image img{
+    max-width: 100%;
+}
+html{
+    scroll-behavior: smooth;
+}
+/* global rules */
+/* menu */
+.menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    position: relative;
+    cursor: pointer;
+    color: black;
+}
+.menu > p{
+    font-size: 10px;
+    margin-bottom: -2px;
+    margin-left: 30px;
+}
+.menu img{
+    position: relative;
+    bottom: -13%;
+    left: 40%;
+}
+.menu::after{
+    content: '';
+    position: absolute;
+    border-left: 1px solid black;
+    height: 30px;
+    bottom: 78%;
+    left: 90%;
+}
+/* end menu */
+/* header */
+.header{
+    position: relative;
+    bottom: -37%;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    align-items: center;
+    background-color: #0606448a;
+    height: fit-content;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 10%;
+    margin-left: -20px;
+    display: none;
+}
+.parent:hover .header{
+    display: block;
+}
+.header li a{
+    text-decoration: none;
+    color: white;
+    margin-left: 5px;
+}
+.header li a:hover{
+    color: rgb(9, 22, 58);
+}
+.header li:hover{
+    transform: translateX(5%);
+    transition: 0.3s;
+}
+/* end header */
+/* start links */
+.links{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 80%;
+    margin-bottom: 40px;
+    margin-top: -10px;
+    margin-left: -10px;
+    /* 142 */
+}
+.parent:hover .links{
+    margin-left: -142px;
+}
+.parent:hover .menu{
+    margin-left: 2px;
+}
+.links::after{
+    content: '';
+    position: absolute;
+    border-left: 1px solid black;
+    height: 30px;
+    top: -10%;
+    left: 60%;
+}
+/* end links */
+/* about */
+.main,
+.main-project,
+.skills{
+    display: flex;
+    background-color:  #169ba5 ;
+    overflow: hidden;
+}
+.parent{
+    height: 100vh;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    flex-basis: 30%;
+}
+
+/* photo */
+.sec{
+    flex-basis: 30%;
+    margin-left: -5%;
+}
+.image{
+    transform: translateY(50%);
+}
+.image img{
+    border-radius: 30%;
+    max-width: 50%;
+}
+.sec h2{
+    font-weight: 600;
+    margin-top: 10%;
+    font-size: 25px;
+    margin-left: -15%;
+}
+/* end photo */
+/* text */
+.text{
+    flex-basis: 40%;
+    margin-top: 5%;
+}
+.text p{
+
+    padding: 25px 30px;
+    transform: translateY(50%);
+    margin-top: 5%;
+    position: absolute;
+    z-index: 4;
+    color: white;
+    background-color: hwb(240 2% 73% / 0.91);
+    height: 200px;
+    border-radius: 50px;
+    top: -5%;
+    margin-right: 5%;
+    display: none;
+    transition: 0.3;
+}
+.text img.down{
+    max-width: 100%;
+    position: absolute;
+    z-index: 3;
+    transition: 0.3s;
+    margin-right: 5%;
+    filter: blur(0);
+}
+.text img.up{
+    width: 10%;
+    position: relative;
+    right: -50%;
+    z-index: 4;
+    animation: img-up 0.9s infinite  forwards linear;
+}
+@keyframes img-up{
+    0%{
+        transform: translateY(-20%);
+    }
+    50%{
+        transform: translateY(0%);
+    }
+    100%{
+        transform: translateY(15%);
+    }
+}
+.text:hover > img.down{
+    filter: blur(5px);
+}
+.text:hover > p{
+    display: block;
+}
+.text:hover > img.up{
+    display: none;
+}
+/* end about */
+/* start Academic projects */
+.main-project{
+    border-top: 1px solid rgba(255, 255, 255, 0.651);
+    max-height: 100vh;
+}
+.main-project .title{
+    margin-top: 5%;
+    margin-left: 10%;
+    color: rgba(255, 255, 255, 0.911);
+}
+.text-projects,
+.text-skills{
+    max-width: 700px;
+    margin-top: 20%;
+    margin-left: -40%;
+    display: flex;
+}
+/* start chat */
+.text-projects .chat-app{
+    flex-basis: 30%;
+}
+.text-projects .chat-app>img{
+    max-width: 20%;
+    position: absolute;
+    filter: blur(0);
+    transition: 0.3s;
+}
+.chat-app img.up
+{
+    width: 3%;
+    position: absolute;
+    right: 73%;
+    top: 135%;
+    z-index: 4;
+    animation: img-up 0.9s infinite  forwards linear;
+}
+.chat-app:hover img.up,
+.Django:hover img.up,
+.smart-parking:hover img.up,
+.skills-1:hover img.up,
+.soft-skills:hover img.up{
+    display: none;
+}
+.text-projects .chat-app:hover >img{
+    filter: blur(5px);
+}
+.text-projects .chat-app .des{
+    position: absolute;
+    z-index: 2;
+    background-color: hwb(240 2% 73% / 0.91);
+    color: white;
+    border-radius: 50px;
+    padding: 10px;
+    max-width: 25%;
+    display: none;
+    transition: 0.3s;
+}
+.text-projects .chat-app:hover .des{
+    display: block;
+}
+.text-projects .chat-app .des h2{
+    text-align: center;
+}
+.text-projects .chat-app .des p{
+    padding-left: 10px;
+}
+.text-projects .chat-app .des p a{
+    text-decoration: none;
+    color: #169ba5;
+    text-align: center;
+}
+/* end chat */
+/* start djago */
+.Django{
+    flex-basis: 30%;
+}
+.text-projects .Django>img{
+    max-width: 20%;
+    position: absolute;
+    filter: blur(0);
+    transition: 0.3s;
+    margin-left: 32%;
+}
+.Django img.up{
+    width: 3%;
+    position: absolute;
+    right: 43%;
+    top: 135%;
+    z-index: 4;
+    animation: img-up 0.9s infinite  forwards linear;
+}
+
+.text-projects .Django:hover >img{
+    filter: blur(5px);
+}
+.text-projects .Django .des{
+    position: absolute;
+    z-index: 2;
+    background-color: hwb(240 2% 73% / 0.91);
+    color: white;
+    border-radius: 50px;
+    padding: 10px;
+    max-width: 25%;
+    display: none;
+    transition: 0.3s;
+    margin-left: 29%;
+    font-size: 10px;
+}
+.text-projects .Django:hover .des{
+    display: block;
+}
+.text-projects .Django .des h2{
+    text-align: center;
+    font-size: 20px;
+}
+.text-projects .Django .des p{
+    padding-left: 10px;
+    font-size: 9px;
+}
+.text-projects .Django .des p a{
+    text-decoration: none;
+    color: #169ba5;
+    text-align: center;
+}
+/* end django */
+
+
+
+
+/* start park */
+.text-projects .smart-parking{
+    flex-basis: 30%;
+}
+.text-projects .smart-parking>img{
+    max-width: 20%;
+    position: absolute;
+    filter: blur(0);
+    transition: 0.3s;
+    margin-left: 60%;
+    margin-top: 2%;
+}
+.smart-parking img.up
+{
+    width: 3%;
+    position: absolute;
+    right: 15%;
+    top: 132%;
+    z-index: 4;
+    animation: img-up 0.9s infinite  forwards linear;
+}
+
+.text-projects .smart-parking:hover >img{
+    filter: blur(5px);
+}
+.text-projects .smart-parking .des{
+    position: absolute;
+    z-index: 2;
+    background-color: hwb(240 2% 73% / 0.91);
+    color: white;
+    border-radius: 50px;
+    padding: 15px;
+    max-width: 25%;
+    display: none;
+    transition: 0.3s;
+    margin-left: 58%;
+    font-size: 10px;
+}
+.text-projects .smart-parking:hover .des{
+    display: block;
+}
+.text-projects .smart-parking .des h2{
+    text-align: center;
+}
+.text-projects .smart-parking .des ul{
+    padding-left: 10px;
+    margin-bottom: 2%;
+}
+.text-projects .smart-parking .des ul li{
+    list-style: square;
+    margin-left: 10%;
+    font-size: 13px;
+}
+/* end park */
+/* start skills */
+.skills{
+    border-top: 1px solid rgba(255, 255, 255, 0.651);
+    max-height: 100vh;
+}
+.skills .title{
+    margin-top: 5%;
+    margin-left: 10%;
+    color: rgba(255, 255, 255, 0.911);
+}
+
+.text-skills .skills-1{
+    flex-basis: 50%;
+}
+.text-skills .skills-1>img{
+    max-width: 25%;
+    position: absolute;
+    filter: blur(0);
+    transition: 0.3s;
+    margin-left: 10%;
+    margin-top: -3%;
+}
+.skills-1 img.up
+{
+    width: 3%;
+    position: absolute;
+    right: 65%;
+    top: 235%;
+    z-index: 4;
+    animation: img-up 0.9s infinite  forwards linear;
+}
+.text-skills .skills-1:hover >img{
+    filter: blur(5px);
+}
+.text-skills .skills-1 .des{
+    position: absolute;
+    z-index: 2;
+    background-color: hwb(240 2% 73% / 0.91);
+    color: white;
+    border-radius: 50px;
+    padding: 10px;
+    max-width: 25%;
+    display: none;
+    transition: 0.3s;
+    margin-left: 10%;
+    margin-top: -3%;
+}
+.text-skills .skills-1:hover .des{
+    display: block;
+}
+.text-skills .skills-1 .des h2{
+    text-align: center;
+}
+.text-skills .skills-1 .des ul{
+    padding-left: 10px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+.text-skills .skills-1 .des ul li{
+    list-style: none;
+}
+/* start soft */
+
+.text-skills .soft-skills{
+    flex-basis: 50%;
+}
+.text-skills .soft-skills>img{
+    max-width: 25%;
+    position: absolute;
+    filter: blur(0);
+    transition: 0.3s;
+    margin-left:50%;
+    margin-top: -3%;
+}
+.soft-skills img.up
+{
+    width: 3%;
+    position: absolute;
+    right: 23%;
+    top: 235%;
+    z-index: 4;
+    animation: img-up 0.9s infinite  forwards linear;
+}
+.text-skills .soft-skills:hover >img{
+    filter: blur(5px);
+}
+.text-skills .soft-skills .des{
+    position: absolute;
+    z-index: 2;
+    background-color: hwb(240 2% 73% / 0.91);
+    color: white;
+    border-radius: 50px;
+    padding: 10px;
+    max-width: 25%;
+    display: none;
+    transition: 0.3s;
+    margin-left: 53%;
+    margin-top: 5%;
+}
+.text-skills .soft-skills:hover .des{
+    display: block;
+}
+.text-skills .soft-skills .des h2{
+    text-align: center;
+}
+.text-skills .soft-skills .des ul{
+    padding-left: 10px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+.text-skills .soft-skills .des ul li{
+    list-style: none;
+}
+
+
+/* end soft */
+/* end skills */
+/* end Academic projects */
